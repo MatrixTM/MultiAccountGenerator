@@ -1,18 +1,19 @@
 # MultiAccountGenerator
 Generate Minecraft/NordVPN/Hulu/Origin And ...
 
+Open McAccGen.py-McAccGen-Orginalurl.py with notepad++ or ... and put your webhook in webhook = "Your Webhook" or Ignore This
+
+you can change speed in McAccGen.py-McAccGen-Orginalurl.py
 
 for Account: python McAccGen.py
 
 
-
 for Original url: python McAccGen-Orginalurl.py
    
-   
-Features:
-Discord Webhook Support
-Thread Support
 
+
+
+Features: Discord Webhook Support | Thread Support
 
 Screenshots:
 
