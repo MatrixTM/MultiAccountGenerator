@@ -56,3 +56,4 @@ for _ in range(speed):
     Main().start()
 while True:
     input()
+ 
