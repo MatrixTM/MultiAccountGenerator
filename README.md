@@ -1,14 +1,11 @@
 # MultiAccountGenerator
 Generate Minecraft/NordVPN/Hulu/Origin And ...
 
-Open McAccGen.py-McAccGen and McAccGen-Originalurl.py.py with notepad++ or ... and put your webhook in webhook = "Your Webhook" or Ignore This
+Open McAccGen.py-McAccGen and with notepad++ or Something and put your webhook in webhook = "Your Webhook" or Ignore This
 
-you can change speed in McAccGen.py and McAccGen-Originalurl.py
+you can change speed in McAccGen.py Line 47
 
 for Account: python McAccGen.py
-
-
-for Original url: python McAccGen-Orginalurl.py
    
 
 
