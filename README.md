@@ -14,7 +14,6 @@ Features: Discord Webhook Support | Thread Support
 
 Screenshots:
 
-![01](https://user-images.githubusercontent.com/95581741/153819643-4455670a-c128-4a98-94bc-e5bd382709e2.png)
 
 ![02](https://user-images.githubusercontent.com/95581741/153819661-a591ecd1-e231-4fc3-b58e-6f67a31f2e7b.png)
 
