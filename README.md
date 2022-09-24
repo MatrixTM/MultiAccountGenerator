@@ -1,19 +1,16 @@
-# MultiAccountGenerator
+<h1 align="center" style="margin-top: 0px;">MultiAccountGenerator</h1>
 Generate Minecraft/NordVPN/Hulu/Origin And ...
 
-Open MultiAccGen.py with notepad++ or Something and put your webhook in Line 20 or Ignore This
+![Usage](https://i.imgur.com/ZAXPJs1.png)
 
-you can change speed in McAccGen.py Line 47
+<p align="center">Open MultiAccGen.py with notepad++ or Something and put your webhook in Line 20 or Ignore This</p>
 
-   
+<p align="center">you can change speed in McAccGen.py Line 43</p>
 
+<p align="center">Features: Discord Webhook Support | Thread Support</p>
 
+ ## 🥅 ・Goals
 
-Features: Discord Webhook Support | Thread Support
+・ 30 star config file
 
-Screenshots:
-
-
-![02](https://user-images.githubusercontent.com/95581741/153819661-a591ecd1-e231-4fc3-b58e-6f67a31f2e7b.png)
-
-![03](https://user-images.githubusercontent.com/95581741/153819675-928fe2ff-3765-479a-8e2f-605fb784f7ea.png)
+・ 40 star rebase code :D

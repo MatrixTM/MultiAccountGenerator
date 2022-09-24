@@ -4,7 +4,7 @@ from threading import Thread
 from dhooks.client import Webhook
 import colorama
 import requests
-    
+
 colorama.init()
 
 ## Config
