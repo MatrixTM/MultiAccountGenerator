@@ -1,13 +1,9 @@
-try:
-    from random import choice
-    from string import ascii_letters
-    from threading import Thread
-    from dhooks.client import Webhook
-    import colorama
-    import requests
-except ModuleNotFoundError:
-    import os
-    os.system("pip install dhooks colorama requests")
+from random import choice
+from string import ascii_letters
+from threading import Thread
+from dhooks.client import Webhook
+import colorama
+import requests
     
 colorama.init()
 
