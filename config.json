@@ -1,0 +1,6 @@
+{
+  "thread": 5,
+  "webhook": "discord webhook",
+  "webhook_content": "wow, Account Scraped: <acc>",
+  "accountFilePath": "accounts.txt"
+}
