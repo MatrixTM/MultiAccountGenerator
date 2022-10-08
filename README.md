@@ -14,3 +14,5 @@ Generate Minecraft/NordVPN/Hulu/Origin And ...
 ・ 30 star config file
 
 ・ 40 star rebase + more websites
+
+#### idk why people like this script but okey
