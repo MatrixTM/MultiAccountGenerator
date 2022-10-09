@@ -1,6 +1,22 @@
 {
   "thread": 5,
-  "webhook": "discord webhook",
-  "webhook_content": "wow, Account Scraped: <acc>",
-  "accountFilePath": "accounts.txt"
+  "request-timeout": 5,
+  "output": "accounts.txt",
+  "services": [
+    "bluealts"
+  ],
+  "selector": {
+    "bluealts": "#hero > div > div > div.col-lg-7.pt-5.pt-lg-0.order-2.order-lg-1.d-flex.align-items-center > div > a"
+  },
+  "url": {
+    "bluealts": [
+      "https://bluealts.net/",
+      "https://bluealts.net/crunchyroll/",
+      "https://bluealts.net/hulu/",
+      "https://bluealts.net/nordvpn/",
+      "https://bluealts.net/origin/",
+      "https://bluealts.net/call-of-duty/",
+      "https://bluealts.net/ipvanish/"
+    ]
+  }
 }
