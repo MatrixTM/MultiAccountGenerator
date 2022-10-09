@@ -12,7 +12,7 @@
 
 ---
 
-<p align="center"><img src="images/01.png" width="1040" alt="second"></p>
+<p align="center"><img src="images/01.png" width="1040" alt="outlook"></p>
 
 ## 📝 Document
 ### Don't Use Vpn or Proxy!
@@ -28,6 +28,7 @@ python3 generator.py
 ```
 
 ### Note: You Can Change Something in `config.json`
+### Also, You Can see some Screenshots from [Here](https://github.com/BlackSnowDot/MultiAccountGenerator/tree/main/screenshots)
 
 ## 📝 ToDo
 
