@@ -1,5 +1,5 @@
 colorama~=0.4.5
-PyTerm~=0.0.1
+git+https://github.com/Its-Vichy/PyTerm.git
 bs4~=0.0.1
 beautifulsoup4~=4.11.1
 httpx~=0.23.0
