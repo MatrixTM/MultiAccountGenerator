@@ -32,10 +32,10 @@ class Generator:
     def run(self):
         self.banner()
         for i in range(len(self.config["services"])):
-            print(f"{i+1} - {self.config['services'][i]}")
+            print(f"{i} - {self.config['services'][i]}")
         print("69 - exit\n")
         tmpinp = int(input("Select service to scrape url >> "))
-        inp = tmpinp+1
+        inp = tmpinp
         sys.exit(1) if tmpinp == "69" else inp  # Exit if exit selected
         if inp <= len(self.config['services']):
             inp = self.config['services'][inp]  # Change number to Name
