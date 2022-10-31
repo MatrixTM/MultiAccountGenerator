@@ -1,5 +1,8 @@
-colorama~=0.4.5
 git+https://github.com/Its-Vichy/PyTerm.git
+colorama==0.4.6
 bs4~=0.0.1
 beautifulsoup4~=4.11.1
 httpx~=0.23.0
+asyncio~=3.4.3
+aiohttp~=3.8.3
+aioconsole==0.5.1

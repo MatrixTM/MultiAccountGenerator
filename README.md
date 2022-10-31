@@ -30,9 +30,17 @@ python3 generator.py
 ### Note: You Can Change Something in `config.json`
 ### Also, You Can see some Screenshots from [Here](https://github.com/BlackSnowDot/MultiAccountGenerator/tree/main/screenshots)
 
+Maybe This Video Help You
+
+
+https://user-images.githubusercontent.com/95581741/199072993-e7705478-e68d-4074-b3b3-8d7c5dce85b7.mp4
+
+
+
+---
 ## 📝 ToDo
 
 1. [ ] More Websites
-2. [ ] Async
+2. [x] Async
 
 <h6 align="center" style="color: #25DCF9">You Can't Give me 1 str :(?</h6>
