@@ -1,14 +1,16 @@
+import asyncio
 import sys
 from contextlib import suppress
 from json import load
 from random import choice
 from re import findall
-from threading import Thread
 
+import aiohttp
 import colorama
+from colorama import Fore
 from PyTerm import Console
+from aioconsole import aprint, ainput
 from bs4 import BeautifulSoup
-from httpx import post, Response
 
 colorama.init()
 
@@ -16,56 +18,75 @@ colorama.init()
 class Generator:
     def __init__(self):
         self.config: dict = load(open('config.json'))
+        self.output = open(self.config["output"], "a+")
+        self.tasks = []
+        self.useless_value = 0
+        self.colors = [
+            Fore.LIGHTGREEN_EX,
+            Fore.LIGHTBLACK_EX,
+            Fore.LIGHTMAGENTA_EX,
+            Fore.LIGHTBLUE_EX,
+            Fore.LIGHTCYAN_EX,
+            Fore.LIGHTRED_EX,
+            Fore.LIGHTYELLOW_EX,
+            Fore.CYAN
+        ]
 
-    @staticmethod
-    def banner():
+    async def make_beautiful(self, text: str, reset=True) -> str:
+        tmp = ["%s%s" % (choice(self.colors), char) for char in text]
+
+        return "".join(tmp) if not reset else "".join(tmp) + Fore.RESET
+
+    async def banner(self):
         Console.clear()
-        print("""
+        print(await self.make_beautiful("""
           __  __       _   _ _  _____            
          |  \/  |     | | | (_)/ ____|           
          | \  / |_   _| |_| |_| |  __  ___ _ __  
          | |\/| | | | | __| | | | |_ |/ _ \ '_ \ 
          | |  | | |_| | |_| | | |__| |  __/ | | |
          |_|  |_|\__,_|\__|_|_|\_____|\___|_| |_|                                         
-                        #MahsaAmini\n\n""")
+                        #MahsaAmini\n\n""", False))
 
-    def run(self):
-        self.banner()
+    async def run(self):
+        await self.banner()
         for i in range(len(self.config["services"])):
-            print(f"{i} - {self.config['services'][i]}")
-        print("69 - exit\n")
-        tmpinp = int(input("Select service to scrape url >> "))
-        inp = tmpinp
-        sys.exit(1) if tmpinp == "69" else inp  # Exit if exit selected
-        if inp <= len(self.config['services']):
-            inp = self.config['services'][inp]  # Change number to Name
-            self.banner()
+            await aprint(f"{i} - {self.config['services'][i]}")
+        await aprint("69 - exit\n")
+        inp = await ainput("Select service to scrape url >> ")
+        sys.exit(1) if inp == "69" else inp  # Exit if exit selected
+        if int(inp) <= len(self.config['services']):
+            inp = self.config['services'][int(inp)]  # Change number to Name
+            await self.banner()
         else:
-            input("Select valid Item\nPress Enter to Exit")
+            await ainput("Select valid Item\nPress Enter to Exit")
             sys.exit(1)
+        await aprint("Creating tasks")
         for _ in range(self.config["thread"]):
-            self.Generate(self.config['url'][inp], self.config['selector'][inp] or inp, self.config).start()
+            self.tasks.append(
+                asyncio.create_task(self.generate(self.config['url'][inp], self.config['selector'][inp] or inp)))
+            self.useless_value += 1
+            await aprint("%s Task Created!" % self.useless_value, end="\r")
+            await asyncio.sleep(.1)
+
+        await asyncio.gather(*self.tasks)
+
+    async def generate(self, url: str, selector: str) -> None:
         while True:
-            try:
-                input()
-            except KeyboardInterrupt:
-                sys.exit(1)
-
-    class Generate(Thread):
-        def __init__(self, url: str, selector: str, config: dict):
-            self.request, self.url, self.selector, self.config, self.output, self.outUrl = Response, url, selector, config, open(
-                config["output"], "a+"), str
-            super().__init__(daemon=True)
-
-        def run(self):
-            while True:
-                with suppress(Exception):
-                    self.request = post(choice(self.url), data={"gen": ""}, timeout=self.config["request-timeout"] or 5)
-                    self.outUrl = \
-                        findall("http://.*", str(BeautifulSoup(self.request.text, "html.parser").select(self.selector)))[0]
-                    self.output.write(self.outUrl)
-                    print(f"{colorama.Fore.LIGHTGREEN_EX}[+] {self.outUrl}")
+            with suppress(Exception):
+                session = aiohttp.ClientSession()
+                request = await session.post(choice(url), data={"gen": ""}, timeout=self.config["request-timeout"] or 5)
+                await session.close()
+                outUrl = \
+                    findall("http://.*", str(BeautifulSoup(await request.text(), "html.parser").select(selector)))[0]
+                await aprint(await self.make_beautiful(outUrl))
+                self.output.write("%s\n" % outUrl)
 
 
 if __name__ == '__main__':
-    Generator().run()
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    try:
+        asyncio.run(Generator().run())
+    except KeyboardInterrupt:
+        pass
