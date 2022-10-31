@@ -33,6 +33,6 @@ python3 generator.py
 ## 📝 ToDo
 
 1. [ ] More Websites
-2. [ ] Async
+2. [x] Async
 
 <h6 align="center" style="color: #25DCF9">You Can't Give me 1 str :(?</h6>
