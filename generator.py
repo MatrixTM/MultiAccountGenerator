@@ -4,11 +4,11 @@ from contextlib import suppress
 from json import load
 from random import choice
 from re import findall
+import os
 
 import aiohttp
 import colorama
 from colorama import Fore
-from PyTerm import Console
 from aioconsole import aprint, ainput
 from bs4 import BeautifulSoup
 
@@ -38,7 +38,7 @@ class Generator:
         return "".join(tmp) if not reset else "".join(tmp) + Fore.RESET
 
     async def banner(self):
-        Console.clear()
+        os.system('cls||clear')
         print(await self.make_beautiful("""
           __  __       _   _ _  _____            
          |  \/  |     | | | (_)/ ____|           
