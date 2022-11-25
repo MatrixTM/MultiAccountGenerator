@@ -74,13 +74,14 @@ class Generator:
     async def generate(self, url: str, selector: str) -> None:
         while True:
             with suppress(Exception):
-                session = aiohttp.ClientSession()
-                request = await session.post(choice(url), data={"gen": ""}, timeout=self.config["request-timeout"] or 5)
-                await session.close()
-                outUrl = \
-                    findall("http://.*", str(BeautifulSoup(await request.text(), "html.parser").select(selector)))[0]
-                await aprint(await self.make_beautiful(outUrl))
-                self.output.write("%s\n" % outUrl)
+                with open(self.config["output"], "a+") as file:
+                    session = aiohttp.ClientSession()
+                    request = await session.post(choice(url), data={"gen": ""}, timeout=self.config["request-timeout"] or 5)
+                    await session.close()
+                    outUrl = \
+                        findall("http://.*", str(BeautifulSoup(await request.text(), "html.parser").select(selector)))[0]
+                    await aprint(await self.make_beautiful(outUrl))
+                    file.write("%s" % outUrl)
 
 
 if __name__ == '__main__':
