@@ -1,4 +1,4 @@
 @Echo off
 echo Installing Requirements.
-python -m pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 PAUSE
