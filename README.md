@@ -21,13 +21,13 @@
 ```
 pip3 install -r requirements.txt
 ```
-Alose you can use install.bat
+Also you can use install.bat
 
 **Run Script**
 ```shell
 python3 generator.py
 ```
-Alose you can use run.bat
+Also you can use run.bat
 
 ### Note: You Can Change Something in `config.json`
 ### Also, You Can see some Screenshots from [Here](https://github.com/BlackSnowDot/MultiAccountGenerator/tree/main/screenshots)
