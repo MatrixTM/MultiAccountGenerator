@@ -1,6 +1,6 @@
 <p align="center"><img src="images/02.png" alt="MultiGen"></p>
 <div align="center" style="margin-top: 0;">
-   <p>Dont Skid 👀</p>
+   <p>Don't Skid 👀</p>
 </div>
 <em><h5 align="center">(Programming Language - Python 3)</h5></em>
 <p align="center">
@@ -29,7 +29,7 @@ python3 generator.py
 ```
 Also you can use run.bat
 
-### Note: You Can Change Something in `config.json`
+### Note: You Can Change Something's in `config.json`
 ### Also, You Can see some Screenshots from [Here](https://github.com/BlackSnowDot/MultiAccountGenerator/tree/main/screenshots)
 
 Maybe This Video Help You
