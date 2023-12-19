@@ -126,7 +126,7 @@ class Generator:
          | |\/| | | | | __| | | | |_ |/ _ \ '_ \ 
          | |  | | |_| | |_| | | |__| |  __/ | | |
          |_|  |_|\__,_|\__|_|_|\_____|\___|_| |_|                                         
-                        #MahsaAmini\n\n""", False))
+                        #MATRIX\n\n""", False))
 
     async def run(self) -> None:
         await self.banner()
