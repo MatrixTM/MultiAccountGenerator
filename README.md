@@ -38,6 +38,11 @@ Maybe This Video Help You
 https://user-images.githubusercontent.com/95581741/199072993-e7705478-e68d-4074-b3b3-8d7c5dce85b7.mp4
 
 
+## Need a Cheap Server? No Problem
+
+<a href="https://aeza.net/?ref=375036"><img src="https://aeza.net/_next/static/media/a.9a01553c.svg" width="128" height="128" alt="aeza"></a>
+
+#### You can buy an 10Gbps/Cheap server from [Aeza Hosting](https://aeza.net/?ref=375036) with crypto (100% anonymous).
 
 ---
 ## 📝 ToDo
