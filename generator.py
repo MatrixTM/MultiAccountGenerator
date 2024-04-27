@@ -97,7 +97,7 @@ class AutoUpdater:
 class Generator:
     def __init__(self):
         self.version = "v1.1"
-        AutoUpdater(self.version).update()
+        #AutoUpdater(self.version).update()
         self.config: dict = load(open('config.json'))
         self.output: IO = open(self.config["output"], "a+")
         self.tasks: list = []
@@ -153,17 +153,17 @@ class Generator:
 
     async def generate(self, worker, url: str, selector: str) -> None:
         while True:
-            with suppress(Exception):
+            try:
                 async with openfile(self.config["output"], "a+") as file:
                     async with ClientSession() as session:
                         request = await session.post(choice(url), data={"gen": ""},
-                                                     timeout=self.config["request-timeout"] or 5)
-                        outUrl = \
-                            findall("http://.*",
-                                    str(BeautifulSoup(await request.text(), "html.parser").select(selector)))[
-                                0]
-                        await aprint("%s[%s] " % (Fore.LIGHTCYAN_EX, worker) + await self.make_beautiful(outUrl))
-                        await file.write("%s" % outUrl)
+                                                    timeout=self.config["request-timeout"] or 5)
+                        redirected_url = request.url  # Get the redirected URL directly
+                        await aprint("%s[%s] " % (Fore.LIGHTCYAN_EX, worker) + choice(self.colors) + str(redirected_url))
+                        await file.write("%s" % str(redirected_url))
+            except Exception as e:
+                print(f"An error occurred: {e}")  # Print any encountered error
+
 
 
 if __name__ == '__main__':
