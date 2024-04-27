@@ -14,20 +14,28 @@
 
 <p align="center"><img src="images/01.png" width="1040" alt="outlook"></p>
 
+
 ## 📝 Document 👀
 ### ⚠️ Don't Use Vpn or Proxy! 🔒
+
+**Download** 👽
+```
+git clone https://github.com/MatrixTM/MultiAccountGenerator.git
+```
+or download zip from [Here](https://github.com/MatrixTM/MultiAccountGenerator/archive/refs/heads/main.zip)
+
 **Install Requirements** 💻
 
 ```
-pip3 install -r requirements.txt
+pip install -r requirements.txt
 ```
-Also you can use install.bat 💸
+Also you can use install.bat for windows 💸
 
 **Run Script** 🚀
 ```shell
 python3 generator.py
 ```
-Also you can use run.bat
+Also you can use run.bat for windows
 
 ### Note: You Can Change urls in config.json 📝
 ### Also, You Can see some Screenshots from [Here](https://github.com/BlackSnowDot/MultiAccountGenerator/tree/main/screenshots) 📸
