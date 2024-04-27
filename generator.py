@@ -144,14 +144,14 @@ class Generator:
         await aprint("Creating tasks")
         for i in range(self.config["thread"]):
             self.tasks.append(
-                create_task(self.generate(i, self.config['url'][inp], self.config['selector'][inp] or inp)))
+                create_task(self.generate(i, self.config['url'][inp])))
             await aprint("%s Task Created!" % i, end="\r")
             await sleep(.1)
         print()
 
         await gather(*self.tasks)
 
-    async def generate(self, worker, url: str, selector: str) -> None:
+    async def generate(self, worker, url: str) -> None:
         while True:
             try:
                 async with openfile(self.config["output"], "a+") as file:
