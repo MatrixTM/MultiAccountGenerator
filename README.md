@@ -14,26 +14,25 @@
 
 <p align="center"><img src="images/01.png" width="1040" alt="outlook"></p>
 
-## 📝 Document
-### Don't Use Vpn or Proxy!
-**Install Requirements**
+## 📝 Document 👀
+### ⚠️ Don't Use Vpn or Proxy! 🔒
+**Install Requirements** 💻
 
 ```
 pip3 install -r requirements.txt
 ```
-Also you can use install.bat
+Also you can use install.bat 💸
 
-**Run Script**
+**Run Script** 🚀
 ```shell
 python3 generator.py
 ```
 Also you can use run.bat
 
-### Note: You Can Change Something's in `config.json`
-### Also, You Can see some Screenshots from [Here](https://github.com/BlackSnowDot/MultiAccountGenerator/tree/main/screenshots)
+### Note: You Can Change urls in config.json 📝
+### Also, You Can see some Screenshots from [Here](https://github.com/BlackSnowDot/MultiAccountGenerator/tree/main/screenshots) 📸
 
-Maybe This Video Help You
-
+Maybe This Video Help You 📹
 
 https://user-images.githubusercontent.com/95581741/199072993-e7705478-e68d-4074-b3b3-8d7c5dce85b7.mp4
 
@@ -50,4 +49,4 @@ https://user-images.githubusercontent.com/95581741/199072993-e7705478-e68d-4074-
 1. [ ] More Websites
 2. [x] Async
 
-<h6 align="center" style="color: #25DCF9">You Can't Give me 1 str :(?</h6>
+<h6 align="center" style="color: #25DCF9">Can't You Give me even 1 star :(?</h6>
