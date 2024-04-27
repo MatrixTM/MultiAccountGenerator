@@ -5,9 +5,6 @@
   "services": [
     "bluealts"
   ],
-  "selector": {
-    "bluealts": "#hero > div > div > div.col-lg-7.pt-5.pt-lg-0.order-2.order-lg-1.d-flex.align-items-center > div > a"
-  },
   "url": {
     "bluealts": [
       "https://bluealts.net/",
@@ -16,7 +13,8 @@
       "https://bluealts.net/nordvpn/",
       "https://bluealts.net/origin/",
       "https://bluealts.net/call-of-duty/",
-      "https://bluealts.net/ipvanish/"
+      "https://bluealts.net/ipvanish/",
+      "https://bluealts.net/curiosity-stream"
     ]
   }
 }
