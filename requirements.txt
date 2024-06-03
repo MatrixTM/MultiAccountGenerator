@@ -5,4 +5,4 @@ aiohttp~=3.9.5
 bs4~=0.0.1
 beautifulsoup4~=4.12.3
 colorama~=0.4.6
-requests~=2.31.0
+requests~=2.32.3
