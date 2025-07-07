@@ -48,9 +48,9 @@ https://user-images.githubusercontent.com/95581741/199072993-e7705478-e68d-4074-
 
 ## Need a Cheap Server? No Problem
 
-<a href="https://aeza.net/?ref=375036"><img src="https://github.com/user-attachments/assets/f875428b-cb35-442d-8dce-cdc5ead4ffbd" width="728" height="90" alt="aeza"></a>
+<a href="https://my-aeza.net/?ref=375036"><img src="https://github.com/user-attachments/assets/f875428b-cb35-442d-8dce-cdc5ead4ffbd" width="728" height="90" alt="aeza"></a>
 
-#### You can buy an 10Gbps/Cheap server from [Aeza Hosting](https://aeza.net/?ref=375036) with crypto (100% anonymous).
+#### You can buy an 10Gbps/Cheap server from [Aeza Hosting](https://my-aeza.net/?ref=375036) with crypto (100% anonymous).
 
 ---
 ## 📝 ToDo
